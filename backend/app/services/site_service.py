@@ -1,6 +1,6 @@
 from uuid import UUID, uuid4
 from datetime import datetime, UTC
-
+from app.models.enums import SiteStatus
 from app.repository.site_repository import SiteRepository
 from app.schemas.site import SiteCreate, SiteResponse
 
@@ -15,7 +15,7 @@ class SiteService:
         # Create the response object combining user input and system defaults
         new_site = SiteResponse(
             id=uuid4(),
-            status="Planned",
+            status=SiteStatus.PLANNED,
             created_at=datetime.now(UTC),
             **site_data.model_dump()  # Assumes Pydantic v2; use .dict() for v1
         )

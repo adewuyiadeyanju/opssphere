@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from app.models.enums import SiteType
+from app.models.enums import SiteType, SiteStatus
 from uuid import UUID
 from datetime import datetime
 from typing import Optional
@@ -57,7 +57,7 @@ class SiteResponse(BaseModel):
 
     longitude: float
 
-    status: str
+    status: SiteStatus
 
     created_at: datetime
 

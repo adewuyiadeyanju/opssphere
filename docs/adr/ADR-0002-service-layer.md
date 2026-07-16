@@ -1,6 +1,12 @@
 # ADR-0002
 
-## Title
+## Context
+
+The application requires business rules such as UUID generation, default lifecycle status assignment,and timestamp management.
+
+These responsibilities could reside in the Router, Repository, or Service Layer.
+
+## Decision
 
 Business Logic Resides in the Service Layer
 
